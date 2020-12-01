@@ -7,6 +7,8 @@ from library import input
 
 # O(n) time, O(n) space
 def find_sum(target_sum):
+  # Find 2 numbers in the input that sum to `target_sum`
+
   # For each number in the input, calculate the theoretical matching number 
   # and check if it is in the input, tracked through the `seen_nums` dictionary
   

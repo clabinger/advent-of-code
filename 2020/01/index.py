@@ -30,11 +30,11 @@ def find_double_sum(target_sum):
   # No matches found in input
   return []
 
-result_nums = find_double_sum(target_sum)
-print('Matching numbers:', result_nums)
+result_nums_part_1 = find_double_sum(target_sum)
+print('Matching numbers:', result_nums_part_1)
 
 # Part 1 solution is the product of the matching numbers
-if len(result_nums) == 2:
-  print('Product:', result_nums[0] * result_nums[1])
+if len(result_nums_part_1) == 2:
+  print('Product:', result_nums_part_1[0] * result_nums_part_1[1])
 
 print('')

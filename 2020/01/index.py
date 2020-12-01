@@ -6,7 +6,7 @@ from library import input
 # Part 1: find 2 numbers that sum to target number
 
 # O(n) time, O(n) space
-def find_sum(target_sum):
+def find_double_sum(target_sum):
   # Find 2 numbers in the input that sum to `target_sum`
 
   # For each number in the input, calculate the theoretical matching number 
@@ -30,9 +30,9 @@ def find_sum(target_sum):
 
 target_sum = 2020
 
-result_nums = find_sum(target_sum)
+result_nums = find_double_sum(target_sum)
 print('Matching numbers:', result_nums)
 
-# Puzzle solution is the product of the matching numbers
+# Part 1 solution is the product of the matching numbers
 if len(result_nums) == 2:
   print('Product:', result_nums[0] * result_nums[1])

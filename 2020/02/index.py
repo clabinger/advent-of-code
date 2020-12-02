@@ -6,7 +6,7 @@ from library import input
 
 # Part 1: check that passwords meet their respective policies
 
-def check_policy(indicator: tuple, test_letter: str, password: str):
+def check_policy_part_1(indicator: tuple, test_letter: str, password: str):
   # Return True if the number of instances of `test_letter` in `password` is within the range (inclusive) given by `indicator`
   occurences = password.count(test_letter)
   return indicator[0] <= occurences <= indicator[1]
@@ -30,5 +30,5 @@ def parse_line(input: str):
   
 # Part 1 solution is the number of input lines that meet their respective policies
 print('Part 1 matches:',
-  sum(1 for line in input() if check_policy(**parse_line(line)))
+  sum(1 for line in input() if check_policy_part_1(**parse_line(line)))
 )

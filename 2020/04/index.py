@@ -31,7 +31,7 @@ def get_passports() -> list:
   # Return last passport (no new line at end of input)
   yield fields
 
-def format_passport(passport:list) -> dict:
+def format_passport(passport: list) -> dict:
   # Parse list of fields into a dict with field names as keys
   # Example: 'byr: 2000' -> {'byr': '2000'}
 
@@ -41,7 +41,7 @@ def format_passport(passport:list) -> dict:
     formatted_passport[m.group(1)] = m.group(2)
   return formatted_passport
 
-def is_valid(passport:dict) -> bool:
+def is_valid(passport: dict) -> bool:
   # Passport is valid if all required fields are included
 
   for field in fields:

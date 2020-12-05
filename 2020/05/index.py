@@ -29,16 +29,30 @@ def decode_boarding_pass(boarding_pass: str) -> tuple:
 
   return (row, column, seat_id)
 
-def main() -> None:
-  # Get maximum Seat ID
-  
-  max_seat_id = 0
+def get_seat_ids() -> list:
+  seat_ids = []
 
   for boarding_pass in input():
     seat_info = decode_boarding_pass(boarding_pass)
-    if seat_info[2] > max_seat_id:
-      max_seat_id = seat_info[2]
+    seat_ids.append(seat_info[2])
   
-  print('Max Seat ID:', max_seat_id)
+  seat_ids.sort()
+
+  return seat_ids
+
+def main() -> None:
+  seat_ids = get_seat_ids()
+
+  # Part 1: find the max seat ID
+  print('Part 1 - Max seat ID:', seat_ids[-1])
+
+  # Part 2: find the first missing seat ID
+  last_id = None
+  for id in seat_ids:
+    if last_id and id - last_id != 1:
+      print('Part 2 - Missing seat ID:', id - 1)
+      break
+    else:
+      last_id = id
 
 main()
